@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThietBi.GUI", "QuanLyThietBi.GUI\QuanLyThietBi.GUI.csproj", "{04719608-991D-5345-954F-23110DCEFFA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThietBi.Entities", "QuanLyThietBi.Entities\QuanLyThietBi.Entities.csproj", "{7F78CD66-E921-5882-AD07-9E12D812C578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThietBi.BLL", "QuanLyThietBi.BLL\QuanLyThietBi.BLL.csproj", "{3D763B53-C935-54D1-8A11-3C984CB43955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThietBi.DAL", "QuanLyThietBi.DAL\QuanLyThietBi.DAL.csproj", "{9892E7FA-BF87-54A0-9D2B-424A62D3DC92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04719608-991D-5345-954F-23110DCEFFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04719608-991D-5345-954F-23110DCEFFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04719608-991D-5345-954F-23110DCEFFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04719608-991D-5345-954F-23110DCEFFA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F78CD66-E921-5882-AD07-9E12D812C578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F78CD66-E921-5882-AD07-9E12D812C578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F78CD66-E921-5882-AD07-9E12D812C578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F78CD66-E921-5882-AD07-9E12D812C578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D763B53-C935-54D1-8A11-3C984CB43955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D763B53-C935-54D1-8A11-3C984CB43955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D763B53-C935-54D1-8A11-3C984CB43955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D763B53-C935-54D1-8A11-3C984CB43955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9892E7FA-BF87-54A0-9D2B-424A62D3DC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9892E7FA-BF87-54A0-9D2B-424A62D3DC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9892E7FA-BF87-54A0-9D2B-424A62D3DC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9892E7FA-BF87-54A0-9D2B-424A62D3DC92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

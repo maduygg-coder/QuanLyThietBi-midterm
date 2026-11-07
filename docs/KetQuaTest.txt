@@ -1,0 +1,61 @@
+PASS: normalize strings before insert
+PASS: parse decimal and purchase date
+PASS: trimmed duplicate key
+PASS: null input
+PASS: validation 1
+PASS: invalid data never reaches Save 1
+PASS: validation 2
+PASS: invalid data never reaches Save 2
+PASS: validation 3
+PASS: invalid data never reaches Save 3
+PASS: validation 4
+PASS: invalid data never reaches Save 4
+PASS: validation 5
+PASS: invalid data never reaches Save 5
+PASS: validation 6
+PASS: invalid data never reaches Save 6
+PASS: validation 7
+PASS: invalid data never reaches Save 7
+PASS: validation 8
+PASS: invalid data never reaches Save 8
+PASS: validation 9
+PASS: invalid data never reaches Save 9
+PASS: validation 10
+PASS: invalid data never reaches Save 10
+PASS: validation 11
+PASS: invalid data never reaches Save 11
+PASS: validation 12
+PASS: invalid data never reaches Save 12
+PASS: validation 13
+PASS: invalid data never reaches Save 13
+PASS: validation 14
+PASS: invalid data never reaches Save 14
+PASS: validation 15
+PASS: invalid data never reaches Save 15
+PASS: validation 16
+PASS: invalid data never reaches Save 16
+PASS: validation 17
+PASS: invalid data never reaches Save 17
+PASS: validation 18
+PASS: invalid data never reaches Save 18
+PASS: validation 19
+PASS: invalid data never reaches Save 19
+PASS: validation 20
+PASS: invalid data never reaches Save 20
+PASS: primary key is immutable
+PASS: update changes existing row only
+PASS: update missing row
+PASS: delete without selected key
+PASS: delete normalized key
+PASS: delete missing row
+PASS: maximum permitted length and numeric boundaries
+PASS: DAL failure propagates without fake success
+PASS: null database configuration
+PASS: empty server
+PASS: empty database
+PASS: server length
+PASS: database length
+PASS: invalid settings never reach DAL
+PASS: test server before saving normalized settings
+PASS: failed server check keeps previous settings
+60 checks passed.

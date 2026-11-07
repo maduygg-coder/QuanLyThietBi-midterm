@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Edmx Version="3.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <Runtime>
+    <ConceptualModels>
+      <Schema Namespace="QuanLyThietBi.DAL" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LoaiThietBi" customannotation:ClrType="QuanLyThietBi.Entities.LoaiThietBi, QuanLyThietBi.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ThietBis" Relationship="Self.ThietBi_LoaiThietBi" FromRole="ThietBi_LoaiThietBi_Target" ToRole="ThietBi_LoaiThietBi_Source" />
+        </EntityType>
+        <EntityType Name="ThietBi" customannotation:ClrType="QuanLyThietBi.Entities.ThietBi, QuanLyThietBi.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="MaTB" />
+          </Key>
+          <Property Name="MaTB" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenTB" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgayMua" Type="DateTime" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MaLoai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LoaiThietBi" Relationship="Self.ThietBi_LoaiThietBi" FromRole="ThietBi_LoaiThietBi_Source" ToRole="ThietBi_LoaiThietBi_Target" />
+        </EntityType>
+        <Association Name="ThietBi_LoaiThietBi">
+          <End Role="ThietBi_LoaiThietBi_Source" Type="Self.ThietBi" Multiplicity="*" />
+          <End Role="ThietBi_LoaiThietBi_Target" Type="Self.LoaiThietBi" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ThietBi_LoaiThietBi_Target">
+              <PropertyRef Name="MaLoai" />
+            </Principal>
+            <Dependent Role="ThietBi_LoaiThietBi_Source">
+              <PropertyRef Name="MaLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ThietBiContext" customannotation:UseClrTypes="true">
+          <EntitySet Name="LoaiThietBis" EntityType="Self.LoaiThietBi" />
+          <EntitySet Name="ThietBis" EntityType="Self.ThietBi" />
+          <AssociationSet Name="ThietBi_LoaiThietBi" Association="Self.ThietBi_LoaiThietBi">
+            <End Role="ThietBi_LoaiThietBi_Source" EntitySet="ThietBis" />
+            <End Role="ThietBi_LoaiThietBi_Target" EntitySet="LoaiThietBis" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </ConceptualModels>
+    <Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CodeFirstDatabase" CdmEntityContainer="ThietBiContext">
+          <EntitySetMapping Name="LoaiThietBis">
+            <EntityTypeMapping TypeName="QuanLyThietBi.DAL.LoaiThietBi">
+              <MappingFragment StoreEntitySet="LoaiThietBi">
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThietBis">
+            <EntityTypeMapping TypeName="QuanLyThietBi.DAL.ThietBi">
+              <MappingFragment StoreEntitySet="ThietBi">
+                <ScalarProperty Name="MaTB" ColumnName="MaTB" />
+                <ScalarProperty Name="TenTB" ColumnName="TenTB" />
+                <ScalarProperty Name="NgayMua" ColumnName="NgayMua" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </Mappings>
+    <StorageModels>
+      <Schema Namespace="CodeFirstDatabaseSchema" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LoaiThietBi">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenLoai" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThietBi">
+          <Key>
+            <PropertyRef Name="MaTB" />
+          </Key>
+          <Property Name="MaTB" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenTB" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="NgayMua" Type="datetime" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MaLoai" Type="nvarchar" customannotation:Index="{ Name: IX_MaLoai, Order: 0 }" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="ThietBi_LoaiThietBi">
+          <End Role="LoaiThietBi" Type="Self.LoaiThietBi" Multiplicity="1" />
+          <End Role="ThietBi" Type="Self.ThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiThietBi">
+              <PropertyRef Name="MaLoai" />
+            </Principal>
+            <Dependent Role="ThietBi">
+              <PropertyRef Name="MaLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CodeFirstDatabase">
+          <EntitySet Name="LoaiThietBi" EntityType="Self.LoaiThietBi" Schema="dbo" Table="LoaiThietBi" />
+          <EntitySet Name="ThietBi" EntityType="Self.ThietBi" Schema="dbo" Table="ThietBi" />
+          <AssociationSet Name="ThietBi_LoaiThietBi" Association="Self.ThietBi_LoaiThietBi">
+            <End Role="LoaiThietBi" EntitySet="LoaiThietBi" />
+            <End Role="ThietBi" EntitySet="ThietBi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </StorageModels>
+  </Runtime>
+  <Designer>
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <Diagrams />
+  </Designer>
+</Edmx>
